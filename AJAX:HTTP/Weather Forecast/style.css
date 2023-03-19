@@ -1,0 +1,158 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins';
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.weatherCard {
+  position: relative;
+  width: 300px;
+  height: 350px;
+  background-size: cover!important;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 30px;
+  transition: .5s;
+}
+
+.weatherCard.active {
+  width: 400px;
+  height: 800px;
+}
+
+.weatherCard .weatherNow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  transition: .5s;
+}
+
+.weatherCard .weatherNow .img {
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.weatherCard .weatherNow .temperature {
+  position: absolute;
+  right: 50px;
+  top: 50px;
+  color: #fff;
+  font-size: 1.65em;
+  font-family: 600;
+  transition: .5s;
+}
+
+.weatherCard.active .weatherNow .temperature {
+  right: 150px;
+}
+
+.weatherCard .weatherNow .city {
+  position: absolute;
+  bottom: 60px;
+  text-align: right;
+  width: 100%;
+  padding: 5px 20px;
+  font-weight: 600;
+  color: #fff;
+  font-size: 1.5em;
+}
+
+.weatherCard .weatherNow .date {
+  position: absolute;
+  bottom: 20px;
+  text-align: right;
+  padding: 5px 20px;
+  font-weight: 500;
+  color: #ffffff;
+  width: 100%;
+  font-size: 1.3em;
+}
+
+.weatherCard.active .weatherNow {
+  height: 250px;
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0px);
+}
+
+.weatherCard .weatherNextDays {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 550px;
+  backdrop-filter: blur(15px);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(350px);
+  transition: .5s;
+}
+
+.weatherCard.active .weatherNextDays {
+  transform: translateY(0px);
+  opacity: 1;
+  visibility: visible;
+}
+
+.weatherCard .showMore {
+  border: 0px;
+  border-radius: 60px;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #fff;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 100;
+  font-size: .9em;
+  transition: .5s;
+  font-weight: 500;
+}
+
+.weatherCard.active .showMore {
+  background-color: rgba(255, 255, 255, .3);
+}
+
+.showMore:hover {
+  transform: scale(1.1);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+  padding: 10px 20px;
+  border-bottom: 2px solid rgba(255, 255, 255, .3);
+}
+
+.row img {
+  width: 25;
+  height: 25;
+}
+
+.row div {
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.1em;
+}
